@@ -21,11 +21,11 @@ if [ "$(docker ps -a -q -f name=rocketchat_db)" ]; then
     echo "MongoDB container already exists."
 else
     echo "Creating MongoDB container..."
-    docker pull mongo:5.0
+    docker pull mongo:6.0
     docker run -d \
         --name rocketchat_db \
         -v rocketchat_db_data:/data/db \
-        mongo:5.0
+        mongo:6.0
 fi
 
 # 3. Check Rocket.Chat container
